@@ -29,18 +29,16 @@ app.post('/data', function(req,res){
   const ret = {attacker : 'radhika'};
   const username = req.body.username;
   const password = req.body.password;
-  console.log("RECEIVED DATA", username, password);
-  // const ip = req.headers["x-forwarded-for"];
-  // if (ip){
-  //   const list = ip.split(",");
-  //   ip = list[list.length-1];
-  // } else {
-  //   ip = req.connection.remoteAddress;
-  // }
+  let ip = req.headers["x-forwarded-for"];
+  if (ip){
+    const list = ip.split(",");
+    ip = list[list.length-1];
+  } else {
+    ip = req.connection.remoteAddress;
+  }
   ret.username = username;
   ret.password = password;
-  // ret.ip = ip;
-  console.log("RETURNING OBJECT", ret);
+  ret.ip = ip;
   res.json(ret);
 });
 
