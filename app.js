@@ -26,7 +26,7 @@ app.get('/data', function(req,res){
 });
 
 app.post('/data', function(req,res){
-  const ret = {attacker : 'radhika'};
+  const ret = {};
   const username = req.body.username;
   const password = req.body.password;
   let ip = req.headers["x-forwarded-for"];
