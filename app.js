@@ -30,16 +30,16 @@ app.post('/data', function(req,res){
   const username = req.body.username;
   const password = req.body.password;
   console.log("RECEIVED DATA", username, password);
-  const ip = req.headers["x-forwarded-for"];
-  if (ip){
-    const list = ip.split(",");
-    ip = list[list.length-1];
-  } else {
-    ip = req.connection.remoteAddress;
-  }
+  // const ip = req.headers["x-forwarded-for"];
+  // if (ip){
+  //   const list = ip.split(",");
+  //   ip = list[list.length-1];
+  // } else {
+  //   ip = req.connection.remoteAddress;
+  // }
   ret.username = username;
   ret.password = password;
-  ret.ip = ip;
+  // ret.ip = ip;
   console.log("RETURNING OBJECT", ret);
   res.json(ret);
 });
