@@ -41,7 +41,7 @@ app.post('/data', function(req,res){
   ret.password = password;
   ret.ip = ip;
   console.log("RETURNING OBJECT", ret);
-  res.send(ret);
+  res.json(ret);
 });
 
 // catch 404 and forward to error handler
