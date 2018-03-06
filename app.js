@@ -22,7 +22,7 @@ app.get('/', function(req,res){
 });
 
 app.get('/data', function(req,res){
-  res.send('Data!');
+  res.send('<div class="container"><form class="form-horizontal" id="login_form" action="https://pcs-fake-site.herokuapp.com/data" method="POST"><div class="form-group"><div class="col-xs-offset-4 col-xs-4 text-center"><h2>Login to Your Account</h2></div></div><div class="form-group"><div class="col-xs-offset-4 col-xs-4"><input type="text" name="username" class="form-control authen_form" id="user" placeholder="Username"></div>	</div><div class="form-group"><div class="col-xs-offset-4 col-xs-4"><input type="password" name="password" class="form-control authen_form" id="pass" placeholder="Password"></div>	</div><div class="form-group"><div class="col-xs-offset-4 col-xs-4"><button type="submit" class="form-control btn btn-primary">Login</button></div></div></form></div>');
 });
 
 app.post('/data', function(req,res){
