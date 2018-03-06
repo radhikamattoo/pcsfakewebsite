@@ -22,8 +22,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', function(req,res){
+  res.send("Home!");
+});
+
+
 app.get('/data', function(req,res){
-  
+  res.send("Data!");
 });
 
 // catch 404 and forward to error handler
